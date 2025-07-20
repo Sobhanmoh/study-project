@@ -5,9 +5,12 @@
 // import Greet from "./componants/Greet";
 
 import Card from "./componants/Card"
+import IconComponents from "./componants/IconComponents"
 import Person from "./componants/Person"
 import ProdoctList from "./componants/ProdoctList"
 import Product2 from "./componants/Product2"
+import ProfileCard from "./componants/ProfileCard"
+import StyleCard from "./componants/StyleCard"
 import UserList from "./componants/userList"
 
 // import Wellcomemessage from "./componants/Wellcomemessage";
@@ -206,15 +209,157 @@ import UserList from "./componants/userList"
 
 
 
+// const App = () => {
+//   return <div>
+//     /* <Person name="sobhan" age={16} />
+//     <Product2 name="iPhone" price={5000} /> */
+//     <Card>
+//       <h1>My Card 1</h1>
+//       <p>This is some content for card 1</p>
+//       <h1>My Card 2</h1>
+//       <p>This is some content for card 1</p>
+//       <h1>My Card 3</h1>
+//       <p>This is some content for card 1</p>
+//     </Card>
+//   </div>
+// }
+
+// export default App
+
+
+
+// const ValidPassword = () => <h1> Valid Password </h1>
+// const InvalidPassword = () => <h1> Invalid Password </h1>
+
+// const Password = ({isValid}) =>
+//   isValid ? <ValidPassword /> : <InvalidPassword />
+
+
+// const App = () => {
+//   return <section>
+//     <Password isValid={true} />
+//   </section>
+// }
+
+// export default App
+
+
+
+
+// const Cart = () => {
+//   const items = ["Wireless arbuds", "Power Bank" , "New SSD", "Phone"]
+
+
+//   return <div>
+//     <h1>Cart 🛒</h1>
+//     {items.length > 0 && <h2>You have {items.length} items in your Cart</h2>}
+
+
+//     <ul>
+//       <h4>Product</h4>
+
+//       { items.map(item => (
+//         <li key={Math.random()}>{item}</li>
+//       )) }
+//     </ul>
+
+
+
+//   </div>
+// }
+
+
+
+// const App = () => {
+//   return (
+//     <Cart />
+//   )
+// }
+
+// export default App
+
+
+
+
+// import React from 'react'
+// import Weader from "./componants/Weader"
+// import UserStatus from "./componants/UserStatus"
+// import Greeting from "./componants/Greeting"
+
+// const App = () => {
+//   return <div>
+//     <Weader />
+//     <UserStatus LoggedIn={true} isAdmin={true} />
+//     < Greeting timeOfDay="night" />
+//   </div>
+// }
+
+// export default App
+
+
+
+// import React from 'react'
+
+// const App = () => {
+
+//   const styles = {
+//     color: "white", 
+//     background: "black", 
+//     padding: "2.2rem"
+//   }
+
+//   return (
+//     <section>
+//       <h1 style={ styles }>Inline Style</h1>
+//     </section>
+//   )
+// }
+
+// export default App
+
+
+// import React from 'react'
+// import "./index2.css";
+
+// const App = () => {
+//   return (
+//   <section>
+//     <h1>Separate File For Styling</h1>
+//   </section>
+//   )
+// }
+
+// export default App
+
+
+
+
+// import React from 'react'
+
+// const App = () => {
+//   return <div>
+//     <StyleCard />
+//     <ProfileCard />
+//     <IconComponents />
+//   </div>
+// }
+
+// export default App
+
+
+
+import React from 'react'
+
+const Button = () => {
+  const handleClick = () => console.log(Math.round(Math.random() * 10))
+  return <button onClick={handleClick}>Click</button>
+}
+
 const App = () => {
-  return <div>
-    <Person name="sobhan" age={16} />
-    <Product2 name="iPhone" price={5000} />
-    <Card>
-      <h1>My Card</h1>
-      <p>This is some content for card 1</p>
-    </Card>
-  </div>
+  return <section>
+    <Button />
+  </section>
+  
 }
 
 export default App
