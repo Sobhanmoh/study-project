@@ -348,18 +348,100 @@ import UserList from "./componants/userList"
 
 
 
-import React from 'react'
+// import React from 'react'
 
-const Button = () => {
-  const handleClick = () => console.log(Math.round(Math.random() * 10))
-  return <button onClick={handleClick}>Click</button>
-}
+// const Button = () => {
+//   const handleClick = () => console.log(Math.round(Math.random() * 10))
+//   return <button onClick={handleClick}>Click</button>
+// }
+
+// const Copy = () => {
+//   const copyHandler = () => {
+//     console.log('Stop stealing my content')
+//   }
+
+//   return (
+//     <p onCopy={copyHandler}>
+//        Lorem ipsum dolor sit amet consectetur, 
+//        adipisicing elit. Itaque, temporibus. 
+//        Provident voluptatem deleniti vel sint 
+//        ea aut laudantium commodi suscipit?
+//     </p>
+//   )
+// }
+
+
+// const Move = () => {
+
+//   function moveHandler() {
+//     alert('Mouse move event fired')
+//     console.log('mouse move event fired')
+//   }
+
+//   return (
+//     <p onMouseMove={moveHandler}>
+//       Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum corporis, corrupti distinctio inventore voluptas culpa blanditiis minus pariatur iure? Odio.
+
+//     </p>
+//   )
+// }
+
+// const App = () => {
+//   return <section>
+//     <Move />
+//   </section>
+  
+// }
+
+// export default App
+
+
+// import React from 'react'
+// import { useState  } from "react";
+
+
+// const App = () => {
+
+//   const [count, setCount] = useState(0)
+
+//   const increment = () => setCount(count + 1)
+//   const decrement = () => setCount(count - 1)
+
+//   return <section>
+//     <h1>{count}</h1>
+//     <button onClick={increment}>+</button>
+//     <button onClick={decrement}>-</button>
+//   </section>
+// }
+
+// export default App
+
+
+
+import React, { useState } from 'react'
+
 
 const App = () => {
+const [movies,setMovies] = useState([
+  {id: 1, title: 'Bat Man', rating: 3},
+  {id: 2, title: 'Iron Man', rating: 6}
+])
+
+
+const handleClick = () => {
+  setMovies(
+    movies.map((m) => (m.id == 1 ? { ...movies, title: "Walter White" } : m))
+  )
+}
+
   return <section>
-    <Button />
+    {movies.map((m) => (
+      <li key={Math.random()}>{m.title}</li>
+    ))}
+
+    <button onClick={handleClick}>Change Name</button>
+
   </section>
-  
 }
 
 export default App
