@@ -418,30 +418,47 @@ import UserList from "./componants/userList"
 
 
 
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
 
+
+// const App = () => {
+// const [movies,setMovies] = useState([
+//   {id: 1, title: 'Bat Man', rating: 3},
+//   {id: 2, title: 'Iron Man', rating: 6}
+// ])
+
+
+// const handleClick = () => {
+//   setMovies(
+//     movies.map((m) => (m.id == 1 ? { ...movies, title: "Walter White" } : m))
+//   )
+// }
+
+//   return <section>
+//     {movies.map((m) => (
+//       <li key={Math.random()}>{m.title}</li>
+//     ))}
+
+//     <button onClick={handleClick}>Change Name</button>
+
+//   </section>
+// }
+
+// export default App
+
+import { useState } from "react"
+import ComOne from "./componants/ComOne"
+import ComTwo from "./componants/ComTwo"
 
 const App = () => {
-const [movies,setMovies] = useState([
-  {id: 1, title: 'Bat Man', rating: 3},
-  {id: 2, title: 'Iron Man', rating: 6}
-])
+  const [count, setCount] = useState(0)
 
-
-const handleClick = () => {
-  setMovies(
-    movies.map((m) => (m.id == 1 ? { ...movies, title: "Walter White" } : m))
-  )
-}
-
-  return <section>
-    {movies.map((m) => (
-      <li key={Math.random()}>{m.title}</li>
-    ))}
-
-    <button onClick={handleClick}>Change Name</button>
-
+  return (
+  <section>
+    <ComOne count={count} onClickHandler={() => setCount(count + 1 )} />
+    <ComTwo count={count} onClickHandler={() => setCount(count + 1 )} />
   </section>
+  )
 }
 
 export default App
