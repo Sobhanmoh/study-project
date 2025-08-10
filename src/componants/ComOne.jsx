@@ -1,10 +1,10 @@
-const ComOne = ({ count, onClickHanler }) => {
-  const handleClick = () => onClickHanler()
+const ComOne = ({ count, onClickHandler }) => {
+  const handleClick = () => onClickHandler()
 
   return (
   <div>
     <p>{count}</p>
-    <button onClick={handleClick}>Incremen</button>
+    <button onClick={handleClick}>Increment</button>
   </div>
   )
 }

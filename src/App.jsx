@@ -5,12 +5,19 @@
 // import Greet from "./componants/Greet";
 
 import Card from "./componants/Card"
+import Counter from "./componants/Counter"
+import ExampleOne from "./componants/ExampleOne"
+import Example from "./componants/ExampleOne"
+import ExampleTree from "./componants/ExampleTree"
+import ExampleTwo from "./componants/ExampleTwo"
 import IconComponents from "./componants/IconComponents"
 import Person from "./componants/Person"
 import ProdoctList from "./componants/ProdoctList"
 import Product2 from "./componants/Product2"
+import Profile from "./componants/Profile"
 import ProfileCard from "./componants/ProfileCard"
 import StyleCard from "./componants/StyleCard"
+import TodoList from "./componants/TodoList"
 import UserList from "./componants/userList"
 
 // import Wellcomemessage from "./componants/Wellcomemessage";
@@ -446,19 +453,51 @@ import UserList from "./componants/userList"
 
 // export default App
 
-import { useState } from "react"
-import ComOne from "./componants/ComOne"
-import ComTwo from "./componants/ComTwo"
+// import { useState } from "react"
+// import ComOne from "./componants/ComOne"
+// import ComTwo from "./componants/ComTwo"
+
+// const App = () => {
+//   const [count, setCount] = useState(0)
+
+//   return (
+//   <section>
+//     <ComOne count={count} onClickHandler={() => setCount(count + 1 )} />
+//     <ComTwo count={count} onClickHandler={() => setCount(count + 1 )} />
+//   </section>
+//   )
+// }
+
+// export default App
+
+
+
+// import React from 'react'
+
+// const App = () => {
+//   return (
+//     <div>
+//       <ExampleOne />
+//       <ExampleTwo />
+//       <ExampleTree />
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+
+import React from 'react'
 
 const App = () => {
-  const [count, setCount] = useState(0)
 
-  return (
-  <section>
-    <ComOne count={count} onClickHandler={() => setCount(count + 1 )} />
-    <ComTwo count={count} onClickHandler={() => setCount(count + 1 )} />
-  </section>
-  )
+  return <div>
+    {/* <Counter /> */}
+    {/* <TodoList /> */}
+    <Profile />
+  </div>
 }
 
 export default App

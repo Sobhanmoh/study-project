@@ -1,7 +1,13 @@
 import React from 'react'
 
-const ComTwo = () => {
-  return <div>ComTwo</div>
+const ComTwo = ({ count, onClickHandler }) => {
+
+  const handleClick = () => onClickHandler()
+
+  return <div>
+    <p>{count}</p>
+    <button onClick={handleClick}>Increment</button>
+  </div>
 }
 
 export default ComTwo
