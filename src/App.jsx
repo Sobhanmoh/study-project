@@ -5,6 +5,7 @@
 // import Greet from "./componants/Greet";
 
 import Card from "./componants/Card"
+import CopyInput from "./componants/CopyInput"
 import Counter from "./componants/Counter"
 import ExampleOne from "./componants/ExampleOne"
 import Example from "./componants/ExampleOne"
@@ -16,7 +17,9 @@ import ProdoctList from "./componants/ProdoctList"
 import Product2 from "./componants/Product2"
 import Profile from "./componants/Profile"
 import ProfileCard from "./componants/ProfileCard"
+import Shopping from "./componants/Shopping"
 import StyleCard from "./componants/StyleCard"
+import Switcher from "./componants/Switcher"
 import TodoList from "./componants/TodoList"
 import UserList from "./componants/userList"
 
@@ -489,15 +492,98 @@ import UserList from "./componants/userList"
 
 
 
-import React from 'react'
+// import React from 'react'
+
+// const App = () => {
+
+//   return <div>
+//     <Counter />
+//     <TodoList />
+//     <Profile />
+//     <Shopping />
+//   </div>
+// }
+
+// export default App
+
+
+
+// import React from 'react'
+
+// const App = () => {
+//   return (
+//     <div>
+//       <CopyInput />
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+// import React from 'react'
+
+// const App = () => {
+//   return <div>
+//  <Switcher /> 
+//   </div>
+// }
+
+// export default App
+
+
+// import React, { useState, useEffect } from 'react'
+
+// const App = () => {
+//   const [value, setValue] = useState(0)
+//   const [something, setSomething] = useState(0)
+
+//       useEffect(() => {
+//   if (value > 0) {
+//     console.log("call useEffect")
+//     document.title = `Increment ${value}`
+//   }
+//   }, [value])
+
+//   return <div>
+//     <h2>{value}</h2>
+//     <button onClick={() => setValue(value + 1)}>Click Me</button>
+//     <button onClick={() => setSomething(value + 1)}>Increment by Something</button>
+//   </div>
+// }
+
+// export default App
+
+
+
+import React, { useEffect, useState } from 'react'
 
 const App = () => {
+  const [data, setData] = useState([])
 
-  return <div>
-    {/* <Counter /> */}
-    {/* <TodoList /> */}
-    <Profile />
-  </div>
+  useEffect(() => {
+    async function getData(params) {
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/todos"
+        )
+      const data = await response.json()
+      if (data && data.length) setData(data)
+    }
+  
+
+    getData()
+  }, [])
+
+  return (
+    <div>
+      <ul>
+        {data.map(todo => (
+          <li key={todo.id}>{todo.title}</li>
+        ))}
+      </ul>
+    </div>
+  )
 }
 
 export default App
