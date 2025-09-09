@@ -4,13 +4,20 @@
 // import Add from "./componants/Add";
 // import Greet from "./componants/Greet";
 
+import BasicEffect from "./componants/BasicEffect"
 import Card from "./componants/Card"
+import ComponentA from "./componants/ComponentA"
+import ComponentB from "./componants/ComponentB"
+import ComponentC from "./componants/ComponentC"
 import CopyInput from "./componants/CopyInput"
 import Counter from "./componants/Counter"
+import CounterEffect from "./componants/CounterEffect"
+import CournerEffect from "./componants/CounterEffect"
 import ExampleOne from "./componants/ExampleOne"
 import Example from "./componants/ExampleOne"
 import ExampleTree from "./componants/ExampleTree"
 import ExampleTwo from "./componants/ExampleTwo"
+import FetchDataEffect from "./componants/FetchDataEffect"
 import IconComponents from "./componants/IconComponents"
 import Person from "./componants/Person"
 import ProdoctList from "./componants/ProdoctList"
@@ -557,32 +564,90 @@ import UserList from "./componants/userList"
 
 
 
-import React, { useEffect, useState } from 'react'
+// import React, { useEffect, useState } from 'react'
 
-const App = () => {
-  const [data, setData] = useState([])
+// const App = () => {
+//   const [data, setData] = useState([])
 
-  useEffect(() => {
-    async function getData(params) {
-      const response = await fetch(
-        "https://jsonplaceholder.typicode.com/todos"
-        )
-      const data = await response.json()
-      if (data && data.length) setData(data)
-    }
+//   useEffect(() => {
+//     async function getData(params) {
+//       const response = await fetch(
+//         "https://jsonplaceholder.typicode.com/todos"
+//         )
+//       const data = await response.json()
+//       if (data && data.length) setData(data)
+//     }
   
 
-    getData()
-  }, [])
+//     getData()
+//   }, [])
 
+//   return (
+//     <div>
+//       <ul>
+//         {data.map(todo => (
+//           <li key={todo.id}>{todo.title}</li>
+//         ))}
+//       </ul>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+// import React from 'react'
+
+
+// const App = () => {
+
+//   return (
+//     <div>
+//       {/* <BasicEffect /> */}
+//       {/* <CounterEffect /> */}
+//       <FetchDataEffect />
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+// import { createContext } from "react"
+
+
+// import ComponentA from "./componants/ComponentA"
+
+// export const Data = createContext()
+
+// const App = () => {
+//   const name = "Sobhan"
+
+//   return (
+//     <div>
+//       <Data.Provider value={name}>
+//        <ComponentA/>
+//       </Data.Provider>
+//       <ComponentB />
+//       <ComponentC />
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+import React from 'react'
+import UserProfile from "./componants/UserProfile"
+import { UserProvider } from "./componants/UserContext"
+
+const App = () => {
   return (
-    <div>
-      <ul>
-        {data.map(todo => (
-          <li key={todo.id}>{todo.title}</li>
-        ))}
-      </ul>
-    </div>
+    <UserProvider>
+      <UserProfile />
+    </UserProvider>
   )
 }
 
